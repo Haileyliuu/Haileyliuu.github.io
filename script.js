@@ -2,7 +2,7 @@ const wrap = document.getElementById("asciiWrap");
 const pre  = document.getElementById("ascii");
 
 async function loadAscii() {
-  const res = await fetch("images/map.txt");
+  const res = await fetch("/images/map.txt");
   if (!res.ok) throw new Error("HTTP " + res.status);
   pre.textContent = await res.text();
 }
