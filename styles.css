@@ -1,0 +1,64 @@
+body {
+    background-color: #fef8c2;
+    text-align: center;
+}
+
+h1 {
+  font-family: "Kranky", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  color: #c2002a;
+}
+
+p {
+  font-family: "Single Day", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  color: #2785aa;
+}
+
+a {
+    font-family: "Single Day", cursive;
+    font-weight: 600;
+    font-style: normal;
+    color: #7c2bc2;
+}
+
+.button {
+    background-color: #6f0ccb;
+    border: none;
+    color: white;
+    font-family: "Single Day", cursive;
+    padding: 14px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 23px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    
+}
+
+.image-wrapper {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ascii-wrap{
+  position: relative;       
+  display: inline-block;    /* wrapper hugs the ASCII width */
+}
+
+.hot{
+  position: absolute;
+  display: block;
+  background: transparent;
+  /* turn this on while mapping to see the boxes 
+  outline: 2px solid rgba(255,0,0,.35);*/
+}
