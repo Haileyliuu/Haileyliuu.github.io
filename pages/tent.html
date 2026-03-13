@@ -8,8 +8,22 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kranky&family=Single+Day&display=swap" rel="stylesheet">
     </head>
-    <body>
-        <p>tent</p>
+    <body style="background-color: rgb(255, 213, 220);">
+
+        <div class="ascii-wrap" id="asciiWrap">
+            <pre id="ascii" data-src="/images/tent.txt"></pre>
+
+            <!-- Hot regions (0-based x,y in characters; w,h in chars/rows) -->
+            <a class="hot" href="map.html" data-x="6" data-y="31" data-w="12" data-h="15"
+                aria-label="Tent"></a>
+            
+            <button id="playButton" class="hot" data-x="81" data-y="31" data-w="18" data-h="19"
+                aria-label="Boxes"></button>
+        </div>
+
+        <img src="/images/mouse.png" id="mouse" alt=mouse width="20%">
+        
+        <script src="/script.js" defer></script>
         
     </body>
 </html>

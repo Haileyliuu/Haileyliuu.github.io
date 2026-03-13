@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Ferris wheel</title>
+        <title>Tent</title>
         <link rel="stylesheet" type="text/css" href="/styles.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kranky&family=Single+Day&display=swap" rel="stylesheet">
     </head>
-    <body style="background-color: #a1f4ff;">
-        <p>Yippee! you've made it to the top! Have a cookie! &#127850;</p>
-        <a class="button" href="map.html">Back</a> 
-        
-        <br>
+    <body style="background-color: rgb(213, 255, 223);">
 
         <div class="ascii-wrap" id="asciiWrap">
-            <pre id="ascii" data-src="/images/ferris-wheel.txt"></pre>
-        </div>
-        
-        <div id="bottom">
-            <p>There's something really awesome at the top! Quick, hop on!</p>
+            <pre id="ascii" data-src="/images/rest-area.txt"></pre>
+
+            <!-- Hot regions (0-based x,y in characters; w,h in chars/rows) -->
+            <button class="hot" id="sleepingGuy" data-x="58" data-y="18" data-w="12" data-h="25"
+                aria-label="Sleeping guy"></button>
         </div>
 
+        <a class="button" href="map.html">Back</a>
+        
         <script src="/script.js" defer></script>
+        
     </body>
 </html>

@@ -2,9 +2,15 @@ const wrap = document.getElementById("asciiWrap");
 const pre  = document.getElementById("ascii");
 
 async function loadAscii() {
-  const res = await fetch("/images/map.txt");
+  const path = pre.dataset.src;
+  const res = await fetch(path);
   if (!res.ok) throw new Error("HTTP " + res.status);
   pre.textContent = await res.text();
+
+  if (location.hash) {
+    const el = document.querySelector(location.hash);
+    if (el) el.scrollIntoView();
+  }
 }
 
 function measureCell() {
@@ -46,3 +52,25 @@ async function init() {
 init();
 window.addEventListener("resize", () => { measureCell(); layoutHotspots(); });
 document.fonts?.addEventListener?.("loadingdone", () => { measureCell(); layoutHotspots(); });
+
+// mouse animation
+const button = document.getElementById("playButton");
+const mouse = document.getElementById("mouse");
+
+if (button != null) {
+button.addEventListener("click", () => {
+  mouse.classList.add("animate");
+});
+}
+
+// alert sleepy
+const sleepy = document.getElementById("sleepingGuy")
+if (sleepy != null)
+{
+  sleepy.addEventListener("click", () => {alert("zzzzzz");});
+}
+
+
+// To create a server, run: 
+// python3 -m http.server 8000
+// Then go to http://localhost:8000/
