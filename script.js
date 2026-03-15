@@ -1,3 +1,6 @@
+let numCoins = 0;
+
+
 const wrap = document.getElementById("asciiWrap");
 const pre  = document.getElementById("ascii");
 
@@ -70,6 +73,18 @@ if (sleepy != null)
   sleepy.addEventListener("click", () => {alert("zzzzzz");});
 }
 
+const coin = document.getElementById("coin")
+if (coin != null)
+{
+  coin.addEventListener("click", () => {alert("ooh shiny!");});
+  numCoins += 1;
+}
+
+const coinText = document.getElementById("coin-count")
+if(numCoins != 0)
+{
+  coinText.divElement.innerHTML = "Coins: " + numCoins;
+}
 
 // To create a server, run: 
 // python3 -m http.server 8000

@@ -3,11 +3,24 @@ body {
     text-align: center;
 }
 
+.main {
+  display: flex;
+  justify-content: center;
+}
+
 h1 {
   font-family: "Kranky", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 40px;
+  color: #c2002a;
+}
+
+h2 {
+  font-family: "Kranky", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
   color: #c2002a;
 }
 
@@ -23,7 +36,15 @@ a {
     font-family: "Single Day", cursive;
     font-weight: 600;
     font-style: normal;
-    color: #7c2bc2;
+    color: #312c34;
+}
+
+.light {
+  color: #bdaa80;
+}
+
+.light-gray {
+  color: #859382;
 }
 
 button {
@@ -46,6 +67,35 @@ button {
     
 }
 
+.back-button {
+    background-color: #d1a753;
+    border: none;
+    color: white;
+    font-family: "Single Day", cursive;
+    padding: 7px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 23px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    
+}
+
+.small-button {
+  background-color: #5c96b4;
+  border: none;
+  border-radius: 5px;
+  font-family: "Single Day", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  color: #cdeeed;
+  padding: 1px 5px;
+  margin-left: 20px;
+}
+
 .image-wrapper {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -64,12 +114,16 @@ button {
   display: block;
   background: transparent;
   /* turn this on while mapping to see the boxes */
-  outline: 2px solid rgba(255,0,0,.35); 
+  /* outline: 2px solid rgba(255,0,0,.35);  */
+}
+
+.text-map {
+  line-height: 1;
 }
 
 #mouse {
   position: fixed;
-  top: 90%;
+  top: 85%;
   left: 100vw;
 }
 
