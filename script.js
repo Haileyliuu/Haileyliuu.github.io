@@ -1,10 +1,14 @@
 let numCoins = 0;
+numCoins = parseInt(sessionStorage.getItem("coin")) || 0;
 
 
 const wrap = document.getElementById("asciiWrap");
 const pre  = document.getElementById("ascii");
 
 async function loadAscii() {
+  if (pre == null) {
+    return;
+  }
   const path = pre.dataset.src;
   const res = await fetch(path);
   if (!res.ok) throw new Error("HTTP " + res.status);
@@ -17,6 +21,9 @@ async function loadAscii() {
 }
 
 function measureCell() {
+  if (pre == null) {
+    return;
+  }
   // measure 1 character in the actual rendered font
   const probe = document.createElement("span");
   probe.textContent = "M";
@@ -33,6 +40,9 @@ function measureCell() {
 }
 
 function layoutHotspots() {
+  if (pre == null) {
+    return;
+  }
   wrap.querySelectorAll(".hot").forEach(el => {
     const x = Number(el.dataset.x);
     const y = Number(el.dataset.y);
@@ -46,13 +56,6 @@ function layoutHotspots() {
   });
 }
 
-async function init() {
-  await loadAscii();
-  measureCell();
-  layoutHotspots();
-}
-
-init();
 window.addEventListener("resize", () => { measureCell(); layoutHotspots(); });
 document.fonts?.addEventListener?.("loadingdone", () => { measureCell(); layoutHotspots(); });
 
@@ -67,24 +70,39 @@ button.addEventListener("click", () => {
 }
 
 // alert sleepy
-const sleepy = document.getElementById("sleepingGuy")
+const sleepy = document.getElementById("sleepingGuy");
 if (sleepy != null)
 {
   sleepy.addEventListener("click", () => {alert("zzzzzz");});
 }
 
-const coin = document.getElementById("coin")
+const coin = document.getElementById("coin");
 if (coin != null)
 {
-  coin.addEventListener("click", () => {alert("ooh shiny!");});
-  numCoins += 1;
+  coin.addEventListener("click", () => {
+    alert("ooh shiny! +1 coin!");
+    numCoins += 1;
+    sessionStorage.setItem("coin", numCoins);
+    console.log(numCoins)
+  });
 }
 
-const coinText = document.getElementById("coin-count")
-if(numCoins != 0)
-{
-  coinText.divElement.innerHTML = "Coins: " + numCoins;
+function updateInventory() {
+  const coinText = document.getElementById("coin-count");
+  if(numCoins != 0 && coinText)
+  {
+    coinText.innerHTML = "Coins: " + numCoins;
+  }
 }
+
+async function init() {
+  await loadAscii();
+  measureCell();
+  layoutHotspots();
+  updateInventory();
+}
+
+init();
 
 // To create a server, run: 
 // python3 -m http.server 8000
