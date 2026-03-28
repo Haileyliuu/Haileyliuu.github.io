@@ -1,0 +1,71 @@
+.middle-1000 {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.image-wall {
+  column-count: 3;
+  column-gap: 0;
+}
+
+.image-wall img {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  break-inside: avoid;
+}
+
+@media (max-width: 900px) {
+  .image-wall {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-wall {
+    column-count: 1;
+  }
+}
+
+.image-vertical-art {
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+  
+}
+
+.active {
+  color: red;
+  font-weight: bold;
+  border-bottom: 2px solid red;
+}
+
+/* --------Fonts -----------------------------------------------*/
+
+.caveat-brush-regular {
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nunito-light {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.nunito-regular {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nunito-bold {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
