@@ -1,6 +1,33 @@
+h2 {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+}
+
+p {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .middle-1000 {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  gap: 20px;
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
 }
 
 .image-wall {
@@ -12,7 +39,7 @@
   display: block;
   width: 100%;
   margin: 0;
-  padding: 10px;
+  padding: 5px;
   break-inside: avoid;
 }
 
@@ -31,14 +58,86 @@
 .image-vertical-art {
   max-width: 500px;
   display: block;
-  margin: 0 auto;
   
+}
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img.small {
+  max-width: 180px; 
+  height: auto;
 }
 
 .active {
   color: red;
   font-weight: bold;
-  border-bottom: 2px solid red;
+}
+
+.button {
+    background-color: #6f0ccb;
+    border: none;
+    color: white;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+#navbar-art74 {
+  padding-top: 45px;
+  width: 175px;
+}
+
+#header {
+  background-color: #fac7ff;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navbar-main .nav-link{
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  color: rgb(132, 82, 33);
+  text-decoration: none;
+}
+
+#navbar-main .nav-link:hover {
+  text-decoration: underline;
+}
+
+#navbar-main .nav-link.active {
+  color: rgb(250, 117, 0); 
+  font-weight: 700;
+}
+
+#hailey-liu {
+  text-decoration: none;
+  color: rgb(79, 0, 128);
 }
 
 /* --------Fonts -----------------------------------------------*/

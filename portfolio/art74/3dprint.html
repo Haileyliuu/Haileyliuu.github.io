@@ -11,21 +11,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
         <link href="../styles.css" rel="stylesheet">
         <script src="../script.js" defer></script>
     </head>
     <body>
+        <div id="navbar-main"></div>
         <div class="container-fluid">
-            <h1>3D Print</h1>
             
-            <div id="navbar-art74"></div>
+            <div class="flex">
+                <div id="navbar-art74"></div>
             
-            <div class="middle-1000">
-                <img class="rounded image-vertical-art" src="../images/3d-print/painted_print.JPG" alt="painted print">
+                <div class="middle-1000">
+                    <h2>3D Print</h2>
+                    <div class="image-wrapper">
+                        <img class="rounded image-vertical-art" src="../images/3d-print/painted_print.JPG" alt="painted print">
+                        <p class="text-center">
+                            Here is a painted 3d print of the <a href="minecraft.html">Minecraft build</a> of Aino. 
+                            <br> Dimensions (LxWxH): 2 x 1.75 x 2.17 inches
+                        </p>
+                    </div>
 
-                <p>
-                    Here is a 3d print.
-                </p>
+                    <div class="d-flex justify-content-start gap-2 p-2 mt-5">
+                        <p>
+                            <br>
+                            These are pictures of the draft print. When I was removing the supports, the robot arm 
+                            in the back fell off, so for the final draft, I modified it to attach onto her coat. I
+                            also moved the arms closer to the body to minimize the amount of supports needed.
+                        </p>
+                        <div class="d-flex">
+                            <img class="rounded img-fluid small" src="../images/3d-print/draft-supports.JPG">
+                            <img class="rounded img-fluid small" src="../images/3d-print/draft.JPG">
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="d-flex justify-content-start gap-2 p-2 mt-5">
+            
+                        <img class="rounded img-fluid small" src="../images/3d-print/unpainted_left.jpg">
+                        <img class="rounded img-fluid small" src="../images/3d-print/unpainted_right.jpg">
+                    
+                        <p class="ms-3">
+                            <br>
+                            Here are some pictures of the final print (unpainted). 
+                        </p>
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
