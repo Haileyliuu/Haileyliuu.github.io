@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Self Portrait</title>
+    </head>
+    <body>
+        <iframe src="self_portrait/index.html" title="self portrait" height="600" width="600"></iframe>
+        <pre>
+function setup() {
+  createCanvas(600, 600);
+  background(230, 191, 245);
+  
+}
+
+
+function draw() {
+  scale(1.2);
+  translate(-50, -70);
+  
+  // hair back
+  fill(74, 61, 97);
+  stroke(130, 81, 219); 
+  beginShape();
+  vertex(170, 250);
+  bezierVertex(180, 400, 120, 450, 120, 550);
+  bezierVertex(150, 600, 450, 600, 470, 550);
+  bezierVertex(500, 450, 420, 370, 430, 250);
+  endShape();
+  
+  fill(41, 37, 69);
+  strokeWeight(0);
+  beginShape();
+  vertex(170, 250);
+  bezierVertex(190, 400, 150, 450, 150, 550);
+  bezierVertex(140, 600, 450, 600, 450, 550);
+  bezierVertex(470, 450, 400, 370, 430, 250);
+  endShape();
+  strokeWeight(1);
+  
+  // face
+  fill(217, 183, 152);
+  stroke(255, 165, 0);
+  ellipse(300, 300, 250, 260);
+  
+  fill(245, 217, 191);
+  strokeWeight(0);
+  ellipse(300, 300, 230, 260);
+  
+  fill(217, 183, 152);
+  rect(230, 210, 100, 20);
+  
+  //blush
+  strokeWeight(0);
+  fill(235, 191, 176);
+  ellipse(370, 340, 40, 20);
+  ellipse(225, 340, 40, 20);
+  
+  // eyes
+  fill(255, 255, 255);
+  stroke(171, 92, 92);
+  ellipse(245, 300, 70, 70);
+  ellipse(350, 300, 70, 70);
+  
+  fill(120, 84, 74);
+  ellipse(250, 300, 50, 50);
+  ellipse(345, 300, 50, 50);
+  
+  fill(79, 50, 42);
+  ellipse(250, 308, 40, 30);
+  ellipse(345, 308, 40, 30);
+  
+  fill(43, 23, 18);
+  ellipse(250, 300, 35, 35);
+  ellipse(345, 300, 35, 35);
+  
+  fill(197, 248, 252);
+  rect(260, 280, 10, 10);
+  rect(355, 280, 10, 10);
+  
+  // eyelashes
+  strokeWeight(3);
+  line(215, 325, 210, 330);
+  line(220, 330, 217, 337);
+  
+  line(385, 271, 380, 276);
+  line(393, 278, 386, 283);
+  
+  // mouth
+  noFill();
+  strokeWeight(3)
+  arc(300, 360, 50, 50, 0, PI);
+  strokeWeight(1)
+  
+  // hair front
+  fill(74, 61, 97);
+  stroke(130, 81, 219);
+  strokeWeight(0);
+  arc(300, 220, 220, 150, PI, 0, PIE);
+  arc(200, 350, 60, 280, HALF_PI, PI + HALF_PI, CHORD);
+  arc(400, 350, 60, 280, PI + HALF_PI, HALF_PI, CHORD);
+  
+  arc(390, 230, 120, 80, 0, PI + HALF_PI, CHORD);
+  arc(340, 230, 30, 100,HALF_PI, PI + HALF_PI, CHORD);
+  arc(190, 210, 120, 150, PI + HALF_PI + QUARTER_PI,  PI - QUARTER_PI, CHORD);
+  
+  noFill();
+  strokeWeight(2);
+  arc(190, 210, 120, 130, radians(360),  radians(150));
+  arc(180, 210, 120, 170, radians(360),  radians(110));
+  arc(390, 220, 120, 80, radians(30), radians(180));
+  
+  
+  fill(41, 37, 69);
+  strokeWeight(0);
+  arc(274, 220, 50, 50, radians(180), 0);
+  
+  
+  fill(197, 248, 252);
+  stroke(252, 177, 252);
+  strokeWeight(1);
+  triangle(340, 200, 380, 230, 360, 230);
+  triangle(380, 200, 410, 230, 380, 210);
+  
+  // shirt
+  fill(245, 95, 198);
+  stroke(255, 0, 117);
+  quad(240, 450, 360, 450, 440, 600, 160, 600);
+  
+  fill(217, 74, 191); //shadow
+  strokeWeight(0);
+  quad(250, 450, 350, 450, 420, 600, 180, 600);
+  
+  fill(245, 95, 198);
+  strokeWeight(1);
+  quad(250, 450, 350, 450, 400, 600, 200, 600);
+  strokeWeight(2);
+  line(300, 450, 300, 600);
+  strokeWeight(1);
+  
+  
+  //zipper
+  fill(255, 245, 245);
+  triangle(270, 450, 330, 450, 300, 520);
+  
+  
+  fill(242, 145, 212);
+  triangle(293, 530, 307, 530, 300, 520);
+  
+}
+        </pre>
+    </body>
+</html>
