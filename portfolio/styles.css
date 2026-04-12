@@ -58,7 +58,6 @@ p {
 .image-vertical-art {
   max-width: 500px;
   display: block;
-  
 }
 
 .image-wrapper {
@@ -101,6 +100,15 @@ img.small {
   padding: 0;
   display: flex;
   gap: 20px;
+}
+
+.code-frame {
+  width: 700px;
+  height: 500px;
+  background-color: #fff4e3;
+  border: 1px solid #ff99e5;
+  border-radius: 10px;
+  overflow: auto;
 }
 
 #navbar-art74 {
