@@ -1,12 +1,10 @@
-var img, star_gif, nyan_cat, rainbow, star_round, airbrush, alien_gif;
+var star_gif, nyan_cat, rainbow, star_round, airbrush, alien_gif;
 var initials ='hl'; // your initials
 var choice = '1'; // starting choice, so it is not empty
 var screenbg = 250; // off white background
 var lastscreenshot=61; // last screenshot never taken
 var currentColor = "black";
 var currentStrokeWeight = 2;
-//var colors = ["red", "orange", "yellow","#76f562", "green", "#87dfff", "blue", "#b657ff", 
-//              "#ffc2f3", "white", "black"];
 var colors = ["#110e63","#320b70", "#0900ff", "#890aff", "#5ddeaf", "#ffee00", "#97fcfc", "#ff33f1", "white", "#20488a", "black" ];
 
 var gifs = [];
@@ -19,7 +17,6 @@ var tools = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'e', 'E', '/', 'x
 var screen = false;
 
 function preload() {
-  img = loadImage('https://dma-git.github.io/images/74.png');
   star_gif = loadImage("images/star_loop.gif");
   nyan_cat = loadImage("images/nyan_cat.gif");
   rainbow = loadImage("images/rainbow.png");
