@@ -127,7 +127,8 @@ function newkeyChoice(toolChoice) {
     drawLayer.pop();
 
   } else if (toolChoice == 'e' || toolChoice == 'E') {
-    drawLayer.stroke(screenbg);
+    currentColor = screenbg
+    drawLayer.stroke(currentColor);
     drawLayer.strokeWeight(currentStrokeWeight);
     drawLayer.line(mouseX, mouseY, pmouseX, pmouseY);
 
