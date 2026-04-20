@@ -17,12 +17,12 @@ var tools = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'e', 'E', '/', 'x
 var screen = false;
 
 function preload() {
-  star_gif = loadImage("images/star_loop.gif");
-  nyan_cat = loadImage("images/nyan_cat.gif");
-  rainbow = loadImage("images/rainbow.png");
-  star_round = loadImage("images/star_round.png");
-  airbrush = loadImage("images/airbrush.png");
-  alien_gif = loadImage("images/alien.gif");
+  star_gif = loadImage("https://haileyliuu.github.io/portfolio/art74/diyps2026/images/star_loop.gif");
+  nyan_cat = loadImage("https://haileyliuu.github.io/portfolio/art74/diyps2026/images/nyan_cat.gif");
+  rainbow = loadImage("https://haileyliuu.github.io/portfolio/art74/diyps2026/images/rainbow.png");
+  star_round = loadImage("https://haileyliuu.github.io/portfolio/art74/diyps2026/images/star_round.png");
+  airbrush = loadImage("https://haileyliuu.github.io/portfolio/art74/diyps2026/images/airbrush.png");
+  alien_gif = loadImage("https://haileyliuu.github.io/portfolio/art74/diyps2026/images/alien.gif");
 }
 
 function setup() {
