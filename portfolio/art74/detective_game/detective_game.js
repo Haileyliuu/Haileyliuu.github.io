@@ -190,7 +190,7 @@ function move() {
     dx = (dx / mag) * speed;
     dy = (dy / mag) * speed;
   
-    // update angle based on actual direction
+    // update angle of player
     angle = atan2(dy, dx)-HALF_PI;
   }
 
@@ -353,6 +353,12 @@ function showObtainedItem(){
     if (currentItem === 3) image(obtFish, 0, 0, width, height);
     if (currentItem === 4) image(obtWorm, 0, 0, width, height);
     if (currentItem === 9) image(obtGlasses, 0, 0, width, height);
+    if (keyIsPressed) {
+      showingItem = false;
+      if(collectedItems == 5) {
+        collectedItems++;
+      }
+    }
   }
 }
 
