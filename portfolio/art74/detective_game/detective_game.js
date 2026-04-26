@@ -1,5 +1,5 @@
 var hiddenMap, map, hiddenItems, items, lightOnItems, bird, birdGlasses, obtGlasses, 
-    obtAcorn, obtChips, obtFish, introPage, winPage, beak, beakHover;
+    obtAcorn, obtChips, obtFish, obtFries, obtWorm, introPage, winPage, beak, beakHover;
 var pangolinFont;
 var gameState= "intro";
 var collectedItems = 0;
@@ -7,8 +7,8 @@ var collectedItems = 0;
 var character;
 var playerX = 1650;
 var playerY = 1450;
-let playerW = 50;
-let playerH = 50;
+let playerW = 40;
+let playerH = 40;
 var speed = 5;
 var angle = 0;
 
@@ -20,8 +20,8 @@ var mapHeight = 1620;
 
 var lightOn = false;
 var cursorHover = false;
-// [trash, nut, picnic, fish]
-var itemsFound = [false, false, false, false];
+// [fries, nut, picnic, fish, worm]
+var itemsFound = [false, false, false, false, false];
 var showingItem = false;
 var currentItem = 0;
 
@@ -31,13 +31,20 @@ var collisions = [
   { x: 1400, y: 50, w: 325, h: 75 }, // upper bench
   { x: 300, y: 1100, w: 50, h: 50 }, // bush
   { x: 1775, y: 850, w: 50, h: 75 }, // basket
-  { x: 1575, y: 775, w: 50, h: 50 }, // girl
+  { x: 1570, y: 775, w: 50, h: 50 }, // girl
   { x: 1600, y: 950, w: 50, h: 50 }, // boy
   { x: 900, y: 1400, w: 75, h: 100 }, // lower bench
   { x: 960, y: 1300, w: 75, h: 100 },
   { x: 1025, y: 1200, w: 75, h: 100 },
   { x: 1250, y: 1550, w: 910, h: 100 }, // water
-  { x: 2000, y: 1400, w: 200, h: 150 }
+  { x: 2000, y: 1400, w: 200, h: 150 }, 
+  { x: 885, y: 330, w: 75, h: 40 }, // upper bush 1
+  { x: 1125, y: 330, w: 200, h: 40 }, // upper bush 2
+  { x: 1360, y: 425, w: 30, h: 30 }, // ball
+  { x: 1330, y: 85, w: 20, h: 40 }, // backpack
+  { x: 1925, y: 775, w: 75, h: 75 }, // trash 2
+  { x: 2000, y: 325, w: 100, h: 125 }, // rocks
+  { x: 525, y: 90, w: 275, h: 20 }, // sign
 ];
 
 function preload(){
@@ -52,6 +59,8 @@ function preload(){
   obtAcorn = loadImage("assets/obtained_acorn.png");
   obtChips = loadImage("assets/obtained_chips.png");
   obtFish = loadImage("assets/obtained_fish.png");
+  obtFries = loadImage("assets/obtained_fries.png");
+  obtWorm = loadImage("assets/obtained_worm.png");
   introPage = loadImage("assets/intro_page.png");
   winPage = loadImage("assets/win_page.png");
   beak = loadImage("assets/beak.png");
@@ -120,11 +129,16 @@ function mainGame(){
   checkHover();
   textAlign(LEFT);
   fill("#4d493f");
-  text("Collected items: " + collectedItems + "/4", 20, 580);
+  if (!lightOn) {
+     text("Find the glasses!", 20, 580);
+  }
+  else {
+    text("Collected items: " + collectedItems + "/5", 20, 580);
+  }
   showObtainedItem();
     
   
-  if (collectedItems >= 5) {
+  if (collectedItems > 5) {
     gameState = "win";
   }
 }
@@ -205,11 +219,6 @@ function move() {
     light(hiddenMap, camX, camY);
   }
 
-  // draw walls for testing
-  //for (let collision of collisions) {
-  //  rect(collision.x - camX, collision.y - camY, collision.w, collision.h);
-  //}
-
   push();
   translate(playerX - camX + 25, playerY - camY + 25); // center of image
   rotate(angle);
@@ -226,6 +235,12 @@ function move() {
   if (!lightOn) {
     image(lightOnItems, -camX, -camY, mapWidth, mapHeight);
   }
+  
+  // draw collisions for testing
+  //for (let collision of collisions) {
+  //  rect(collision.x - camX, collision.y - camY, collision.w, collision.h);
+  //  rect(playerX - camX, playerY - camY, playerW, playerH);
+  //}
 }
 
 function light(img, camX, camY) {
@@ -261,7 +276,7 @@ function hitsCollision(x, y, w, h) {
 function mousePressed() {
   if (showingItem) {
     showingItem = false;
-    if(collectedItems == 4) {
+    if(collectedItems == 5) {
       collectedItems++;
     }
     return;
@@ -270,8 +285,18 @@ function mousePressed() {
   let worldMouseX = mouseX + camX;
   let worldMouseY = mouseY + camY;
 
+  // glasses
+  if (!lightOn && isColliding(worldMouseX, worldMouseY, 1, 1, 1040, 1245, 50, 50)) {
+    lightOn = true;
+    character = birdGlasses;
+    
+    showingItem = true;
+    currentItem = 9;
+
+  }
+
   // trash can
-  if (!itemsFound[0] && isColliding(worldMouseX, worldMouseY, 1, 1, 275, 325, 75, 75)) {
+  if (lightOn && !itemsFound[0] && isColliding(worldMouseX, worldMouseY, 1, 1, 275, 325, 75, 75)) {
     lightOn = true;
     itemsFound[0] = true;
     character = birdGlasses;
@@ -309,14 +334,25 @@ function mousePressed() {
     currentItem = 3;
   }
   
+  // worm
+  if (lightOn && !itemsFound[4] && isColliding(worldMouseX, worldMouseY, 1, 1, 825, 785, 50, 50)) {
+    itemsFound[4] = true;
+    collectedItems++;
+    
+    showingItem = true;
+    currentItem = 4;
+  }
+  
 }
 
 function showObtainedItem(){
   if (showingItem) {
-    if (currentItem === 0) image(obtGlasses, 0, 0, width, height);
+    if (currentItem === 0) image(obtFries, 0, 0, width, height);
     if (currentItem === 1) image(obtAcorn, 0, 0, width, height);
     if (currentItem === 2) image(obtChips, 0, 0, width, height);
     if (currentItem === 3) image(obtFish, 0, 0, width, height);
+    if (currentItem === 4) image(obtWorm, 0, 0, width, height);
+    if (currentItem === 9) image(obtGlasses, 0, 0, width, height);
   }
 }
 
@@ -333,8 +369,13 @@ function checkHover(){
   let worldMouseX = mouseX + camX;
   let worldMouseY = mouseY + camY;
 
-  // trash can
-  if (!itemsFound[0] && isColliding(worldMouseX, worldMouseY, 1, 1, 275, 325, 75, 75)) {
+  // glasses
+  if (!lightOn && isColliding(worldMouseX, worldMouseY, 1, 1, 1040, 1245, 50, 50)) {
+    cursorHover = true;
+  }
+  
+  // trash can fries
+  else if (!itemsFound[0] && isColliding(worldMouseX, worldMouseY, 1, 1, 275, 325, 75, 75)) {
     cursorHover = true;
   }
   
@@ -350,6 +391,11 @@ function checkHover(){
   
   // fish
   else if (lightOn && !itemsFound[3] && isColliding(worldMouseX, worldMouseY, 1, 1, 1675, 300, 75, 50)) {
+    cursorHover = true;
+  }
+  
+  // glasses
+  else if (lightOn && !itemsFound[4] && isColliding(worldMouseX, worldMouseY, 1, 1, 825, 785, 50, 50)) {
     cursorHover = true;
   }
   
