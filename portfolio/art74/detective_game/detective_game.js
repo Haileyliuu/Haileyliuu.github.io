@@ -73,6 +73,7 @@ function setup() {
   textAlign(CENTER);
   textFont(pangolinFont);
   textSize(25);
+  noCursor();
 } // end setup
 
 
