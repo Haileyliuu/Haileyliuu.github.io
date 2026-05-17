@@ -1,9 +1,9 @@
-<nav class="navbar art74-nav">
+<nav class="navbar nav">
     <ul>
         <li class="nav-item"><a class="nav-link" href="art74-home.html">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="glitch.html">Glitch</a></li>
         <li class="nav-item"><a class="nav-link" href="mashup.html">Meme Mashup</a></li>
-        <li class="nav-item"><a class="nav-link"href="minecraft.html">Minecraft</a></li>
+        <li class="nav-item"><a class="nav-link" href="minecraft.html">Minecraft</a></li>
         <li class="nav-item"><a class="nav-link" href="3dprint.html">3D Print</a></li>
         <li class="nav-item"><a class="nav-link" href="netart.html">Net Art</a></li>
         <li class="nav-item"><a class="nav-link" href="self-portrait.html">Self Portrait</a></li>
@@ -15,14 +15,19 @@
 
 <style>
 /* Navbar container */
-.navbar {
+#navbar-art74 {
+  padding-top: 45px;
+  width: 180px;
+}
+
+#navbar-art74 .navbar {
     background-color: #fde7fb;
     padding: 10px 20px;
     border-radius: 10px;
 }
 
 /* Remove bullet points */
-.navbar ul {
+#navbar-art74 .navbar ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -30,10 +35,9 @@
 
 
 /* Links */
-.nav-link {
+#navbar-art74 .nav-link {
     text-decoration: none;
     color: #333333;
-    font-family: Arial, sans-serif;
     font-size: 16px;
     padding: 8px 12px;
     border-radius: 5px;
@@ -42,8 +46,13 @@
 }
 
 /* Hover effect */
-.art74-nav .nav-link:hover{
+#navbar-art74 .nav-link:hover{
     background-color: #ffad6e;
     color: white;
+}
+
+#navbar-art74 .nav-link.active {
+  color: rgb(250, 117, 0); 
+  font-weight: 700;
 }
 </style>
