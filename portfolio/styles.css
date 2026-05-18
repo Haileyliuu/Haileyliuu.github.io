@@ -77,6 +77,8 @@ img.small {
 img.large {
     max-width: 800px;
     width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
 .active {
